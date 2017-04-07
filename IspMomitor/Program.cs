@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace IspMomitor
 {
@@ -22,6 +23,14 @@ namespace IspMomitor
             var httpClient = new HttpClient();
             return await httpClient.GetAsync(url).ConfigureAwait(false);
 
+        }
+
+        private void WriteLog(HttpResponseMessage message)
+        {
+            using (var writer = new StreamWriter())
+            {
+
+            }
         }
     }
 }
